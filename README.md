@@ -65,8 +65,8 @@ L'exemple ci-dessus (tiré de MOOCacademy) permet de rajouter la leçon Pythagor
 
 ### Les seeds :
 
-Le seed fonctionne pour le projet hackingPinterest et hackingNews.
-
 ```
 rails db:seed
 ```
+
+Genere des valeurs liées entres elles.

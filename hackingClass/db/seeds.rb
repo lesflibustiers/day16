@@ -7,3 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+
+5.times do |index|
+  Cour.create(name: Faker::Name.name)
+end
+
+Cour.all.each do |cour|
+  rand(5).times {Student.create(name: Faker::Name.name, cour_id: cour.id)}
+end
