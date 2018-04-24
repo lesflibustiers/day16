@@ -6,22 +6,22 @@ Mise en place de différentes bdd avec Rails. Utilisation d'ActiveRecord, des mo
 
 Les 5 projets sont : blog, MOOCacademy, The Hacking Pinterest, The Hacking News et The Hacking Class.
 
-### Bases de données
+## Bases de données
 
-## blog
+### blog
 * users : id, first_name, last_name, user_name, email_adress, password
 * articles : id, title, user_id (cle etrangere), body, description
 * categories : id, name
 * user.id => articles.user_id
 * Le seed fonctionne et genere des users random et des articles random (non associés).
 
-## MOOCacademy
+### MOOCacademy
 * cours : id, title, description
 * lessons : id, cours_id (Cle etrangere), title, body
 * Le seed n'est pas mit en place, on ajoute les utilisateurs a la mains.
 * cours.id => lessons.cours_id
 
-## The Hacking Pinterest
+### The Hacking Pinterest
 * users : id, name, email, password
 * pins : id, user_id (cle etrangere), title, image
 * comments : id, user_id (cle etrangere), pin_id (cle etrangere), content
@@ -30,7 +30,7 @@ Les 5 projets sont : blog, MOOCacademy, The Hacking Pinterest, The Hacking News 
 * pin.id => comment.pin_id
 * Le seed fonctionne et genere des users random, des pins random associés aux users et des commentaires random associés aux pins.
 
-## The Hacking News
+### The Hacking News
 * users : id, name 
 * liens : id, name, user_id (cle etrangere)
 * comments : id, user_id (cle etrangere), lien_id (cle etrangere), comment_id (cle etrangere), content
@@ -40,13 +40,13 @@ Les 5 projets sont : blog, MOOCacademy, The Hacking Pinterest, The Hacking News 
 * comment.id => comment.comment_id
 * Le seed fonctionne et genere des users random, des liens random associés aux users et des commentaires random associés aux liens puis des commentaires random associés aux commentaires.
 
-## The Hacking Class
+### The Hacking Class
 * students : id, name, cour_id (cle etrangere)
 * cours : id, name
 * cours.id => student.cour_id
 * Le seed fonctionne et genere des cours random et des students random associés aux cours.
 
-### Les commandes
+## Les commandes
 
 Les commandes suivantes pour utiliser la base de donnée sont :
 
@@ -63,7 +63,7 @@ my_lesson = my_cours.lessons.create(title:'Pythagore', body:'Il faut apprendre P
 ```
 L'exemple ci-dessus (tiré de MOOCacademy) permet de rajouter la leçon Pythagore dans le cours à l'index 2 (qui est le cours de math).
 
-### Les seeds :
+## Les seeds :
 
 ```
 rails db:seed
