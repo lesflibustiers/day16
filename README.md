@@ -4,7 +4,7 @@ Mise en place de différentes bdd avec Rails. Utilisation d'ActiveRecord, des mo
 
 ## Les projets
 
-Les 5 projets sont : Tech blog, MOOCacademy, The Hacking Pinterest, The Hacking News et The Hacking Class.
+Les 5 projets sont : blog, MOOCacademy, The Hacking Pinterest, The Hacking News et The Hacking Class.
 
 ### Bases de données
 
