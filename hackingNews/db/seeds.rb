@@ -8,7 +8,18 @@
 
 require 'faker'
 
-10.times do |index|
-  User.create!(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, user_name: Faker::WorldOfWarcraft.hero, email_adress: Faker::Internet.email, password: Faker::Beer.hop)
-  Comment.create!(content: Faker::Lorem.sentence)
+3.times do |index|
+  User.create!(name: Faker::Name.name)
+end
+
+User.all.each do |user|
+  rand(2).times {Lien.create!([name: Faker::Lorem.sentence, user_id: user.id])}
+end
+
+Lien.all.each do |lien|
+  rand(2).times {Comment.create!([content: Faker::Lorem.sentence, user_id: lien.user_id, lien_id: lien.id, comment_id: 0])}
+end	
+
+Comment.all.each do |comment|
+  rand(2).times {Comment.create!([content: Faker::Lorem.sentence, user_id: comment.user_id, lien_id: comment.lien_id, comment_id: comment.id])}
 end

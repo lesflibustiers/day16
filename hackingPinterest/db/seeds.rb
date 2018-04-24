@@ -7,17 +7,16 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-10.times do |index|
-  User.create!(name: Faker::Name.name)
-  User.create!(password: Faker::Beer.hop)
-  User.create!(email: Faker::Internet.email)
+2.times do |index|
+  User.create!(name: Faker::Name.name, password: Faker::Beer.hop, email: Faker::Internet.email)
 end
 
-10.times do |index|
-  Comment.create!(content: Faker::Lorem.sentence)
+User.all.each do |user|
+  rand(1).times {Pin.create!([image: Faker::LoremPixel.image("50x60"), title: Faker::Lorem.sentence, user_id: user.id])}
+end
+
+User.all.each do |user|
+  Pin.all.each do |pin|
+    rand(1).times {Comment.create!([content: Faker::Lorem.sentence, user_id: user.id, pin_id: pin.id])}
+  end
 end	
-
-10.times do |index|
-  Pin.create!(image: Faker::LoremPixel.image("50x60"))
-  Pin.create!(title: Faker::Lorem.sentence)
-end
