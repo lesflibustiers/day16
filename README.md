@@ -12,12 +12,14 @@ Les 5 projets sont : Tech blog, MOOCacademy, The Hacking Pinterest, The Hacking 
 ** users : id, first_name, last_name, user_name, email_adress, password
 ** articles : id, title, user_id (cle etrangere), body, description
 ** categories : id, name
+Le seed fonctionne et genere des users random et des articles random (non associés).
 
 user.id => articles.user_id
 
 * MOOCacademy
 ** cours : id, title, description
 ** lessons : id, cours_id (Cle etrangere), title, body
+Le seed n'est pas mit en place, on ajoute les utilisateurs a la mains.
 
 cours.id => lessons.cours_id
 
@@ -29,6 +31,7 @@ cours.id => lessons.cours_id
 user.id => pins.user_id
 user.id => comment.user_id
 pin.id => comment.pin_id
+Le seed fonctionne et genere des users random, des pins random associés aux users et des commentaires random associés aux pins.
 
 * The Hacking News
 ** users : id, name 
@@ -39,12 +42,14 @@ user.id => link.user_id
 user.id => comment.user_id
 link.id => comment.link_id
 comment.id => comment.comment_id
+Le seed fonctionne et genere des users random, des liens random associés aux users et des commentaires random associés aux liens puis des commentaires random associés aux commentaires.
 
 * The Hacking Class
-** students : id, name, cours_id (cle etrangere)
-** cours : id, theme
+** students : id, name, cour_id (cle etrangere)
+** cours : id, name
 
-cours.id => student.cours_id
+cours.id => student.cour_id
+Le seed fonctionne et genere des cours random et des students random associés aux cours.
 
 ### Les commandes
 
